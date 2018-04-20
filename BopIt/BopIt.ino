@@ -13,7 +13,7 @@
 const int rled = 2, rbtn = 8;  // Red: 2, 8 BUTTON
 const int gled = 3, pot = A5;  // Green: 3, 10 POTENTIOMETER
 const int bled = 4, sw = A4;  // Blue: 4, 12 SWITCH
-const int startbtn = 9; // Start Btn: 9
+const int startbtn = 12; // Start Btn: 9
 const int buzzer = 5;
 
 // ******************** SETUP ********************
@@ -60,7 +60,7 @@ void loop() {
   int startbtn_st = digitalRead(startbtn);
 
   // Push start button to begin.
-  if (startbtn_st == HIGH) {
+  if (digitalRead(rbtn) == HIGH) {
     tone(buzzer, 800);
     delay(100);
     noTone(buzzer);
